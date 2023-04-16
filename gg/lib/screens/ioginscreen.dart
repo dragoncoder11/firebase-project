@@ -1,78 +1,128 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gg/screens/signupscreen.dart';
 import 'package:gg/widgets/button.dart';
 import 'package:gg/widgets/textfield.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-   NAV1(BuildContext context) {
+class LoginScreen extends StatefulWidget {
+  LoginScreen({Key? key}) : super(key: key);
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  NAV1(BuildContext context) {
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
       return SignUpSCREEN();
     }));
   }
 
+  final _emailcontroller = TextEditingController();
+
+  final _passwordcontroller = TextEditingController();
+  Future login() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailcontroller.text.trim(),
+        password: _passwordcontroller.text.trim());
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _emailcontroller.dispose();
+    _passwordcontroller.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:   SafeArea(
-          child: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Padding(padding: EdgeInsets.all(15)),
-          Image.asset(
-            'assets/vvv.jpg',
-            height: 160,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            'LOG IN',
-            style: TextStyle(
-                fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          SizedBox(
-            height: 20,
-          ),
+      
+      backgroundColor: Color.fromARGB(234, 255, 255, 255),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+         decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage('assets/s2.jpg'),fit: BoxFit.cover)
+            ),
         
-          TextFieldShape(htext: 'enter your email', ltext: 'Email'),
-          SizedBox(
-            height: 20,
-          ),
-          TextFieldShape(htext: 'enter your password', ltext: 'Password'),
-          SizedBox(
-            height: 20,
-          ),
           
-          ButtonShape(buttonname: 'LOG IN'),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Don\'t have an account yet ?',
-                style: TextStyle(
-                  fontSize: 15,
-                ),
+           
+            
+            child: Center(
+        child: SingleChildScrollView(
+            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Padding(padding: EdgeInsets.all(15)),
+              Image.asset(
+                'assets/v2.png',
+                height: 160,
               ),
               SizedBox(
-                width: 12,
+                height: 20,
               ),
-              GestureDetector(
-                onTap:(){NAV1(context);} ,
-                child: Text(
-                  'SIGN UP',
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.greenAccent,
-                      fontWeight: FontWeight.bold),
-                ),
+              Text(
+                'LOG IN',
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
               ),
-            ],
+              SizedBox(
+                height: 20,
+              ),
+              TextFieldShape(
+                htext: 'enter your email',
+                ltext: 'Email',
+                controller: _emailcontroller,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextFieldShape(
+                htext: 'enter your password',
+                ltext: 'Password',
+                controller: _passwordcontroller,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ButtonShape(
+                buttonname: 'LOG IN',
+                ontap:login()
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don\'t have an account yet ?',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 12,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      NAV1(context);
+                    },
+                    child: Text(
+                      'SIGN UP',
+                      style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.greenAccent,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              )
+            ]),
+        ),
+      ),
           )
-        ]),
-      )),
     );
   }
 }
