@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gg/screens/auth.dart';
 import 'package:gg/screens/ioginscreen.dart';
 import 'package:gg/screens/signupscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Auth(),
+      home: SignUpSCREEN(),
     );
   }
 }

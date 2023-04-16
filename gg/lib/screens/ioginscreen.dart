@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gg/screens/home.dart';
 import 'package:gg/screens/signupscreen.dart';
 import 'package:gg/widgets/button.dart';
 import 'package:gg/widgets/textfield.dart';
@@ -21,10 +22,17 @@ class _LoginScreenState extends State<LoginScreen> {
   final _emailcontroller = TextEditingController();
 
   final _passwordcontroller = TextEditingController();
-  Future login() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailcontroller.text.trim(),
-        password: _passwordcontroller.text.trim());
+  login() {
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: _emailcontroller.text, password: _passwordcontroller.text)
+        .then((value) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+        return Home();
+      })).onError((error, stackTrace) {
+        print('error ${error.toString()}');
+      });
+    });
   }
 
   @override
@@ -37,92 +45,85 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      backgroundColor: Color.fromARGB(234, 255, 255, 255),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-         decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/s2.jpg'),fit: BoxFit.cover)
-            ),
-        
-          
-           
-            
-            child: Center(
-        child: SingleChildScrollView(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(padding: EdgeInsets.all(15)),
-              Image.asset(
-                'assets/v2.png',
-                height: 160,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text(
-                'LOG IN',
-                style: TextStyle(
-                    fontSize: 25,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextFieldShape(
-                htext: 'enter your email',
-                ltext: 'Email',
-                controller: _emailcontroller,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              TextFieldShape(
-                htext: 'enter your password',
-                ltext: 'Password',
-                controller: _passwordcontroller,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              ButtonShape(
-                buttonname: 'LOG IN',
-                ontap:login()
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Don\'t have an account yet ?',
-                    style: TextStyle(
-                      fontSize: 15,
+        backgroundColor: Color.fromARGB(234, 255, 255, 255),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/s2.jpg'), fit: BoxFit.cover)),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(padding: EdgeInsets.all(15)),
+                    Image.asset(
+                      'assets/v2.png',
+                      height: 160,
                     ),
-                  ),
-                  SizedBox(
-                    width: 12,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      NAV1(context);
-                    },
-                    child: Text(
-                      'SIGN UP',
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'LOG IN',
                       style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.greenAccent,
+                          fontSize: 25,
+                          color: Colors.black,
                           fontWeight: FontWeight.bold),
                     ),
-                  ),
-                ],
-              )
-            ]),
-        ),
-      ),
-          )
-    );
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFieldShape(
+                      htext: 'enter your email',
+                      ltext: 'Email',
+                      controller: _emailcontroller,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFieldShape(
+                      htext: 'enter your password',
+                      ltext: 'Password',
+                      controller: _passwordcontroller,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ButtonShape(buttonname: 'LOG IN', ontap: login),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Don\'t have an account yet ?',
+                          style: TextStyle(
+                            fontSize: 15,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 12,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            NAV1(context);
+                          },
+                          child: Text(
+                            'SIGN UP',
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.greenAccent,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ],
+                    )
+                  ]),
+            ),
+          ),
+        ));
   }
 }

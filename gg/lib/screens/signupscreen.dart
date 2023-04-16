@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gg/screens/auth.dart';
+import 'package:gg/screens/home.dart';
 import 'package:gg/screens/ioginscreen.dart';
 import 'package:gg/widgets/button.dart';
 import 'package:gg/widgets/textfield.dart';
@@ -25,10 +27,17 @@ class _SignUpSCREENState extends State<SignUpSCREEN> {
   final _namecontroller = TextEditingController();
 
   final _confirm = TextEditingController();
-  Future signup() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailcontroller.text.trim(),
-        password: _passwordcontroller.text.trim());
+  signup() {
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+            email: _emailcontroller.text, password: _passwordcontroller.text)
+        .then((value) {
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) {
+        return Home();
+      })).onError((error, stackTrace) {
+        print('error ${error.toString()}');
+      });
+    });
   }
   @override
   void dispose() {

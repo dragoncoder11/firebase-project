@@ -10,9 +10,9 @@ class ButtonShape extends StatelessWidget {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: GestureDetector(
-          onTap: ()async{
-            await ontap;
-          },
+          onTap: 
+             ontap(),
+         
           child: Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
