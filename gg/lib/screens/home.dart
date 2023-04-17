@@ -1,5 +1,7 @@
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gg/pages/profile_screen.dart';
 import 'package:gg/screens/ioginscreen.dart';
 
 class Home extends StatefulWidget {
@@ -11,6 +13,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   var numindex = 0;
+  var l=[
+    Text('data'),
+    Text('data'),
+    Text('data'),
+    ProfileScreen(),
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +28,13 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: BottomNavigationBar(
           
           iconSize: 32,
-          selectedFontSize: 14,
-          selectedItemColor: Colors.white,
-          selectedLabelStyle: TextStyle(color: Colors.white),
-          unselectedItemColor: Colors.grey,
-          unselectedLabelStyle:TextStyle(color: Colors.grey), 
+          selectedFontSize: 12,
+          selectedItemColor: Color.fromARGB(255, 162, 98, 173),
+          selectedLabelStyle: TextStyle(color: Colors.blueGrey,),
+          unselectedItemColor: Color.fromARGB(255, 189, 174, 174),
+          unselectedLabelStyle:TextStyle(color: Color.fromARGB(255, 189, 174, 174),), 
+          unselectedFontSize: 12,
+          
 
           elevation: 0,
           backgroundColor: Colors.purple,
@@ -43,17 +54,6 @@ class _HomeState extends State<Home> {
                   icon: Icon(Icons.person,), label: 'Profile'),
             ]),
         backgroundColor: Color.fromARGB(234, 255, 255, 255),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(color: Color.fromARGB(237, 255, 255, 255)),
-          child: Column(
-            children: [
-              Center(
-                child: Text('data'),
-              )
-            ],
-          ),
-        ));
+        body:l[numindex]);
   }
 }
