@@ -1,6 +1,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gg/pages/home_screen.dart';
 import 'package:gg/pages/profile_screen.dart';
 import 'package:gg/screens/ioginscreen.dart';
 
@@ -14,7 +15,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   var numindex = 0;
   var l=[
-    Text('data'),
+HomeScreen(),
     Text('data'),
     Text('data'),
     ProfileScreen(),
