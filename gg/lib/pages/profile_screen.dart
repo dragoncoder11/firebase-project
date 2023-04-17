@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gg/screens/home.dart';
 import 'package:gg/widgets/card_screen.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -48,7 +49,12 @@ class ProfileScreen extends StatelessWidget {
                           border: Border.all(width: 1, color: Colors.grey),
                           borderRadius: BorderRadius.circular(12)),
                       child: IconButton(
-                          onPressed: () {}, icon: Icon(Icons.arrow_back_ios))),
+                          onPressed: () {
+  Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (_) {
+                          return Home();
+                        }));                          },
+                          icon: Icon(Icons.arrow_back_ios))),
                   Text(
                     'profile',
                     style: TextStyle(
@@ -62,7 +68,8 @@ class ProfileScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           border: Border.all(width: 1, color: Colors.grey),
                           borderRadius: BorderRadius.circular(12)),
-                      child: IconButton(onPressed: (){}, icon: Icon(Icons.settings))),
+                      child: IconButton(
+                          onPressed: () {}, icon: Icon(Icons.settings))),
                 ],
               ),
               SizedBox(
@@ -71,15 +78,23 @@ class ProfileScreen extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 4, color: Colors.purple),
-                        borderRadius: BorderRadius.circular(50)),
-                    child: CircleAvatar(
-                      radius: 45,
-                      backgroundColor: Color.fromARGB(255, 219, 169, 228),
-                      backgroundImage: AssetImage('assets/d1.png'),
+                  Stack(
+                    children:[Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 4, color: Colors.purple),
+                          borderRadius: BorderRadius.circular(50)),
+                      child: CircleAvatar(
+                        radius: 45,
+                        backgroundColor: Color.fromARGB(255, 219, 169, 228),
+                        backgroundImage: AssetImage('assets/d1.png'),
+                      ),
                     ),
+                    InkWell(onTap: () {
+                      
+                    },
+                      child: Positioned(top: 80,right: 90,child: CircleAvatar(radius: 12,backgroundColor: Color.fromARGB(255, 189, 87, 207),child: Center(child: Icon(Icons.camera
+                      ,size: 18,),),)),
+                    )]
                   ),
                   SizedBox(
                     height: 7,
@@ -108,17 +123,19 @@ class ProfileScreen extends StatelessWidget {
               ),
               Container(
                 height: 500,
-                child: ListView.builder(itemCount: lfunction.length,itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Expanded(
-                      child: CardScreen(
-                          icon: licon1[index],
-                          title: lfunction[index],
-                          icon2: licon2[index]),
-                    ),
-                  );
-                }),
+                child: ListView.builder(
+                    itemCount: lfunction.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        child: Expanded(
+                          child: CardScreen(
+                              icon: licon1[index],
+                              title: lfunction[index],
+                              icon2: licon2[index]),
+                        ),
+                      );
+                    }),
               )
             ],
           ),

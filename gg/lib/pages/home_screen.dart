@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:gg/pages/profile_screen.dart';
+import 'package:gg/widgets/card_home.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+  var licons = [
+    'assets/x1.jpg',
+    'assets/x2.jpg',
+    'assets/x3.jpg',
+    'assets/x4.jpg'
+  ];
+  var ltitle = ['mountains', 'oceans', 'hotels', 'museums'];
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +26,22 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(width: .8, color: Colors.purple),
-                          borderRadius: BorderRadius.circular(60)),
-                      child: CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Color.fromARGB(255, 219, 169, 228),
-                        backgroundImage: AssetImage('assets/d1.png'),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context)
+                            .push(MaterialPageRoute(builder: (_) {
+                          return ProfileScreen();
+                        }));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(width: .8, color: Colors.purple),
+                            borderRadius: BorderRadius.circular(60)),
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Color.fromARGB(255, 219, 169, 228),
+                          backgroundImage: AssetImage('assets/d1.png'),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -101,7 +118,7 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10)),
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 5),
                     child: TextField(
                       decoration: InputDecoration(
                           hintText: 'Search Your Destination',
@@ -118,8 +135,10 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 20,),
-                 Container(
+                SizedBox(
+                  width: 20,
+                ),
+                Container(
                     height: 50,
                     width: 44,
                     decoration: BoxDecoration(
@@ -129,14 +148,24 @@ class HomeScreen extends StatelessWidget {
                     child: IconButton(
                         onPressed: () {},
                         icon: Icon(
-                          Icons.filter,color: Colors.white,
+                          Icons.filter,
+                          color: Colors.white,
                         ))),
-
-
               ],
             ),
-            SizedBox(height: 28,),
-            
+            SizedBox(
+              height: 28,
+            ),
+            Container(
+              height: 65,
+              child: ListView.builder(
+                  itemCount: licons.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return CardHome(
+                        imagecenter: licons[index], title1: ltitle[index]);
+                  }),
+            )
           ],
         ),
       )),
