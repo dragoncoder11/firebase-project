@@ -172,49 +172,52 @@ class HomeScreen extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Stack(children: [
-            
-            ClipRRect(
-    borderRadius: BorderRadius.circular(15),
-             child: Image.asset(
+          child: SingleChildScrollView(
+            child: Column(mainAxisAlignment: MainAxisAlignment.center,children: [
               
-              "assets/x2.jpg",width: 200,height: 200,
-           fit: BoxFit.cover,
-           
-         ),
-       ),
-       Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Text(
-                "Fatih Mosque",
-                style: TextStyle(fontSize: 16),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Row(
-                children: const [
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Icon(Icons.location_on_outlined),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    'Jordan',
-                    style: TextStyle(
-                      color: Color(0xff636782),
-                      fontSize: 13,
+              ClipRRect(
+              borderRadius: BorderRadius.only(topLeft:Radius.circular(15),topRight: Radius.circular(15)),
+               child: Image.asset(
+                
+                "assets/x2.jpg",width: 200,height: 140,
+             fit: BoxFit.cover,
+             
+                   ),
+                 ),
+                 SizedBox(height: 5,),
+                 Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text(
+                  "Fatih Mosque",
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  children: const [
+                    SizedBox(
+                      width: 20,
                     ),
-                  )
-                ],
-              )
-            ],
-          ),
-
-          ],),),
+                    Icon(Icons.location_on_outlined),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      'Jordan',
+                      style: TextStyle(
+                        color: Color(0xff636782),
+                        fontSize: 13,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          
+            ],),
+          ),),
           ],
         ),
       )),

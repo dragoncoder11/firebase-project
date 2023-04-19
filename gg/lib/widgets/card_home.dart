@@ -27,7 +27,7 @@ class _CardHomeState extends State<CardHome> {
             children: [
               Expanded(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius:  BorderRadius.only(topLeft:Radius.circular(8),topRight: Radius.circular(8)),
                   child: Image(
                     
                     image: AssetImage(
