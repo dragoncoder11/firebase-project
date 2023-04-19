@@ -165,10 +165,61 @@ class HomeScreen extends StatelessWidget {
                     return CardHome(
                         imagecenter: licons[index], title1: ltitle[index]);
                   }),
-            )
+            ),SizedBox(height: 30,),
+           Container( height: 200,
+          width: 200,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Stack(children: [
+            
+            ClipRRect(
+    borderRadius: BorderRadius.circular(15),
+             child: Image.asset(
+              
+              "assets/x2.jpg",width: 200,height: 200,
+           fit: BoxFit.cover,
+           
+         ),
+       ),
+       Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              const Text(
+                "Fatih Mosque",
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: const [
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Icon(Icons.location_on_outlined),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    'Jordan',
+                    style: TextStyle(
+                      color: Color(0xff636782),
+                      fontSize: 13,
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+
+          ],),),
           ],
         ),
       )),
     );
   }
 }
+
+
