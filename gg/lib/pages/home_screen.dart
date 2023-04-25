@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gg/pages/profile_screen.dart';
+import 'package:gg/screens/details.dart';
 import 'package:gg/widgets/card_home.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -165,64 +166,79 @@ class HomeScreen extends StatelessWidget {
                     return CardHome(
                         imagecenter: licons[index], title1: ltitle[index]);
                   }),
-            ),SizedBox(height: 30,),
-           Container( height: 200,
-          width: 200,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(15),
-          ),
-          child: SingleChildScrollView(
-            child: Column(mainAxisAlignment: MainAxisAlignment.center,children: [
-              
-              ClipRRect(
-              borderRadius: BorderRadius.only(topLeft:Radius.circular(15),topRight: Radius.circular(15)),
-               child: Image.asset(
-                
-                "assets/x2.jpg",width: 200,height: 140,
-             fit: BoxFit.cover,
-             
-                   ),
-                 ),
-                 SizedBox(height: 5,),
-                 Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                const Text(
-                  "Fatih Mosque",
-                  style: TextStyle(fontSize: 16),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: const [
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Icon(Icons.location_on_outlined),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      'Jordan',
-                      style: TextStyle(
-                        color: Color(0xff636782),
-                        fontSize: 13,
-                      ),
-                    )
-                  ],
-                )
-              ],
             ),
-          
-            ],),
-          ),),
+            SizedBox(
+              height: 30,
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                  return Details();
+                }));
+              },
+              child: Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15)),
+                        child: Image.asset(
+                          "assets/x2.jpg",
+                          width: 200,
+                          height: 140,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            "Fatih Mosque",
+                            style: TextStyle(fontSize: 16),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: const [
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Icon(Icons.location_on_outlined),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Text(
+                                'Jordan',
+                                style: TextStyle(
+                                  color: Color(0xff636782),
+                                  fontSize: 13,
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       )),
     );
   }
 }
-
-

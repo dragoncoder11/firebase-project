@@ -50,14 +50,7 @@ class _SignUpSCREENState extends State<SignUpSCREEN> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(234, 255, 255, 255),
-      body: Container(
-         width: double.infinity,
-        height: double.infinity,
-         decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/s2.jpg'),fit: BoxFit.cover)
-            ),
-        
-          child: Center(
+      body: Center(
         child: SingleChildScrollView(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Padding(padding: EdgeInsets.all(15)),
@@ -151,7 +144,7 @@ class _SignUpSCREENState extends State<SignUpSCREEN> {
               ],
             )
           ]),
-        ),
+        
       )),
     );
   }
