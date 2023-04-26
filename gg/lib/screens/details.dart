@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gg/screens/payment.dart';
 
 class Details extends StatelessWidget {
   const Details({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class Details extends StatelessWidget {
                     Icons.arrow_back_ios,
                   ),
                   SizedBox(
-                    width: 120,
+                    width: 125,
                   ),
                   Text(
                     'details',
@@ -46,7 +47,7 @@ class Details extends StatelessWidget {
                         right: 0,
                         bottom: 0,
                         child: Container(
-                            color: Colors.black.withOpacity(.6),
+                            color: Colors.black.withOpacity(.7),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -121,29 +122,92 @@ class Details extends StatelessWidget {
             SizedBox(
               height: 15,
             ),
-            Row(
-              children: [
-                Text(
-                  'Details',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
-                ),
-                SizedBox(
-                  width: 35,
-                ),
-                Text(
-                  '4.8',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
-                ),
-                    SizedBox(
-              height: 10,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Details',
+                        style: TextStyle(color: Colors.purple, fontSize: 16),
+                      ),
+                      SizedBox(
+                        width: 55,
+                      ),
+                      Text(
+                        'Tourlist',
+                        style: TextStyle(color: Colors.grey, fontSize: 16),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'About',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  SingleChildScrollView(
+                    child: Container(
+                      padding: EdgeInsets.all(10),
+                      height: 170,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: .5, color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white),
+                      child: Text(
+                        'hvshcvlasvfhv hfhegeg gegiehg jhgjehgjegj erkjg h je kger;g jrjg rekjhgkjh kjrk krkrjhk rlkhjrtk jhlkrjtlk hlkjrk gkr lkh',
+                        style: TextStyle(
+                            color: Color.fromARGB(155, 0, 0, 0), fontSize: 14),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        '\$288',
+                        style: TextStyle(color: Colors.black, fontSize: 24),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context)
+                              .pushReplacement(MaterialPageRoute(builder: (_) {
+                            return Payment();
+                          }));
+                        },
+                        child: Container(
+                          height: 70,
+                          width: 160,
+                          decoration: BoxDecoration(
+                              color: Colors.purple,
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Center(
+                            child: Text(
+                              'Book Now',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
-              ],
-            ),
-            Expanded(
-              child: ListView.builder(itemBuilder: ((context, index) {
-                return Container(color: Colors.red,);
-              })),
-            )
           ],
         ),
       ),
