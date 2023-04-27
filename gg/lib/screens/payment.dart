@@ -45,6 +45,7 @@ class Payment extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return Container(
+                        height: 350,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 14, vertical: 10),
@@ -114,6 +115,7 @@ class Payment extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return Container(
+                        height: 350,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 14, vertical: 10),
@@ -175,6 +177,7 @@ class Payment extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return Container(
+                        height: 350,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 14, vertical: 10),
@@ -236,6 +239,7 @@ class Payment extends StatelessWidget {
                     context: context,
                     builder: (context) {
                       return Container(
+                        height: 350,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 14, vertical: 10),
