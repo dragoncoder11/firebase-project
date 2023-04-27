@@ -12,14 +12,12 @@ class Details extends StatelessWidget {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 15, ),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                  ),
+                  IconButton(onPressed: Navigator.of(context).pop, icon: Icon(Icons.arrow_back_ios)),
                   SizedBox(
-                    width: 125,
+                    width: 115,
                   ),
                   Text(
                     'details',
