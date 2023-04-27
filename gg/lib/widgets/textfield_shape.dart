@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TextFField extends StatelessWidget {
-  const TextFField({Key? key, required this.w, this.ass}) : super(key: key);
+  const TextFField({Key? key, required this.w,required this.ass}) : super(key: key);
   final double w;
   final ass;
 
@@ -20,7 +20,7 @@ class TextFField extends StatelessWidget {
                   width: .5,
                 ),
               ),
-              suffixIcon: Container(height: 50,width: 80,decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/b1.png'))),),
+              suffixIcon: Container(height: 50,width: 80,decoration: BoxDecoration(image: DecorationImage(image: AssetImage(ass))),),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               )),

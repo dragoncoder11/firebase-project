@@ -20,7 +20,6 @@ class Text2 extends StatelessWidget {
                   width: .5,
                 ),
               ),
-              suffixIcon: Container(height: 50,width: 80,decoration: BoxDecoration(image: DecorationImage(image: AssetImage('assets/b1.png'))),),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               )),
