@@ -14,7 +14,7 @@ body:  Center(
   
     SizedBox(height: 40,),
   
-    Text('There are no activities yet',style: TextStyle(color: Color.fromARGB(255, 183, 120, 194),fontSize: 20,fontWeight: FontWeight.w400),)
+    Text('There are no activities yet',style: TextStyle(color:  Color.fromARGB(255, 51, 113, 163),fontSize: 20,fontWeight: FontWeight.w400),)
   
   
   

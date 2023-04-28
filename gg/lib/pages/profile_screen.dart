@@ -81,18 +81,18 @@ class ProfileScreen extends StatelessWidget {
                   Stack(
                     children:[Container(
                       decoration: BoxDecoration(
-                          border: Border.all(width: 4, color: Colors.purple),
+                          border: Border.all(width: 4, color: Color.fromARGB(255, 51, 113, 163),),
                           borderRadius: BorderRadius.circular(50)),
                       child: CircleAvatar(
                         radius: 45,
-                        backgroundColor: Color.fromARGB(255, 219, 169, 228),
+                        backgroundColor: Colors.white,
                         backgroundImage: AssetImage('assets/d1.png'),
                       ),
                     ),
                     InkWell(onTap: () {
                       
                     },
-                      child: Positioned(top: 80,right: 90,child: CircleAvatar(radius: 12,backgroundColor: Color.fromARGB(255, 189, 87, 207),child: Center(child: Icon(Icons.camera
+                      child: Positioned(top: 80,right: 90,child: CircleAvatar(radius: 12,backgroundColor: Color.fromARGB(255, 51, 113, 163),child: Center(child: Icon(Icons.camera
                       ,size: 18,),),)),
                     )]
                   ),

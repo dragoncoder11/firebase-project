@@ -82,7 +82,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                     Colors.purple
+                                    Color.fromARGB(255, 204, 44, 33)
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',
@@ -152,7 +152,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                     Colors.purple
+                                    Color.fromARGB(255, 7, 55, 94),
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',
@@ -214,7 +214,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                     Colors.purple
+                                    Color.fromARGB(255, 212, 156, 71)
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',
@@ -276,7 +276,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                     Colors.purple
+                                    Color.fromARGB(255, 51, 113, 163),
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',

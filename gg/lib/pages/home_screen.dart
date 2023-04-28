@@ -38,11 +38,11 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              border: Border.all(width: .8, color: Colors.purple),
+                              border: Border.all(width: .8, color: Color.fromARGB(255, 51, 113, 163),),
                               borderRadius: BorderRadius.circular(60)),
                           child: CircleAvatar(
                             radius: 20,
-                            backgroundColor: Color.fromARGB(255, 219, 169, 228),
+                            backgroundColor: Colors.white,
                             backgroundImage: AssetImage('assets/d1.png'),
                           ),
                         ),
@@ -63,8 +63,8 @@ class HomeScreen extends StatelessWidget {
                       height: 40,
                       width: 40,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 226, 185, 233),
-                          border: Border.all(width: .3, color: Colors.purple),
+                          color:  Color.fromARGB(255, 177, 206, 230),
+                          border: Border.all(width: .3, color:  Color.fromARGB(255, 51, 113, 163),),
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                           onPressed: () {},
@@ -93,7 +93,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       Icon(
                         Icons.star,
-                        color: Colors.purple,
+                        color: Color.fromARGB(255, 243, 150, 9),
                       ),
                     ],
                   ),
@@ -145,8 +145,8 @@ class HomeScreen extends StatelessWidget {
                       height: 50,
                       width: 44,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 226, 185, 233),
-                          border: Border.all(width: .3, color: Colors.purple),
+                          color: Color.fromARGB(255, 128, 178, 219),
+                          border: Border.all(width: .3, color: Color.fromARGB(255, 51, 113, 163),),
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                           onPressed: () {},

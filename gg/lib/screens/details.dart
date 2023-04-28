@@ -54,7 +54,7 @@ class Details extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.check_circle,
-                                      color: Color.fromARGB(255, 189, 87, 207),
+                                      color:Color.fromARGB(255, 51, 113, 163),
                                     ),
                                     SizedBox(
                                       width: 14,
@@ -129,7 +129,7 @@ class Details extends StatelessWidget {
                     children: [
                       Text(
                         'Details',
-                        style: TextStyle(color: Colors.purple, fontSize: 16),
+                        style: TextStyle(color:Color.fromARGB(255, 51, 113, 163), fontSize: 16),
                       ),
                       SizedBox(
                         width: 55,
@@ -188,9 +188,9 @@ class Details extends StatelessWidget {
                         },
                         child: Container(
                           height: 70,
-                          width: 160,
+                          width: 180,
                           decoration: BoxDecoration(
-                              color: Colors.purple,
+                              color:Color.fromARGB(255, 51, 113, 163),
                               borderRadius: BorderRadius.circular(12)),
                           child: Center(
                             child: Text(

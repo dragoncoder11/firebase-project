@@ -24,7 +24,7 @@ class CardScreen extends StatelessWidget {
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
-              children: [Container(height: 38,width: 38,decoration: BoxDecoration(color: Color.fromARGB(255, 221, 157, 233),borderRadius: BorderRadius.circular(12)),child: Icon(icon,color: Color.fromARGB(255, 215, 124, 231),)),SizedBox(width: 13,),
+              children: [Container(height: 38,width: 38,decoration: BoxDecoration(color:  Color.fromARGB(255, 178, 205, 228),borderRadius: BorderRadius.circular(12)),child: Icon(icon,color: Color.fromARGB(255, 51, 113, 163),)),SizedBox(width: 13,),
               Text(title,style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
 
               ],

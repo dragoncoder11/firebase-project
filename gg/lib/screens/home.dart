@@ -31,9 +31,9 @@ HomeScreen(),
           
           iconSize: 32,
           selectedFontSize: 12,
-          selectedItemColor: Color.fromARGB(255, 162, 98, 173),
+          selectedItemColor:  Color.fromARGB(255, 51, 113, 163),
           selectedLabelStyle: TextStyle(color: Colors.blueGrey,),
-          unselectedItemColor: Color.fromARGB(255, 189, 174, 174),
+          unselectedItemColor:  Color.fromARGB(255, 186, 216, 240),
           unselectedLabelStyle:TextStyle(color: Color.fromARGB(255, 189, 174, 174),), 
           unselectedFontSize: 12,
           
