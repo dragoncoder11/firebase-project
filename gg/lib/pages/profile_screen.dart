@@ -86,7 +86,7 @@ class ProfileScreen extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 45,
                         backgroundColor: Colors.white,
-                        backgroundImage: AssetImage('assets/d1.png'),
+                        child: Icon(Icons.person,size: 60,color: Color.fromARGB(255, 134, 190, 236),),
                       ),
                     ),
                     InkWell(onTap: () {
