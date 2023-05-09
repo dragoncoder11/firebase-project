@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gg/dummy_data.dart';
 import 'package:gg/pages/profile_screen.dart';
 import 'package:gg/screens/details.dart';
 import 'package:gg/widgets/card_home.dart';
+import 'package:gg/widgets/categories.dart';
 import 'package:gg/widgets/container.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -159,31 +161,8 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 28,
               ),
-              Container(
-                height: 65,
-                child: ListView.builder(
-                    itemCount: licons.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return CardHome(
-                          imagecenter: licons[index], title1: ltitle[index]);
-                    }),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                height: 220,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                    itemCount: licons.length,
-                    itemBuilder: ((context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: MyContainer(title: ltitle[index], img: licons[index]),
-                      );
-                    })),
-              )
+            
+        
             ],
           ),
         ),
