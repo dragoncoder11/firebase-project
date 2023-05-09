@@ -145,11 +145,11 @@ class _LoginPageState extends State<LoginPage> {
                         log();
                       },
                       child: Container(
-                        width: 180,
+                        width: 150,
                         height: 70,
                         decoration: BoxDecoration(
                           color: Color.fromARGB(255, 51, 113, 163),
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(18),
                         ),
                         child: Center(
                           child: Text(
