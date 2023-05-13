@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:gg/pages/category_travel_screen.dart';
 import 'package:gg/screens/details.dart';
 
 class MyContainer extends StatelessWidget {
-  const MyContainer({Key? key, required this.title,required this.img}) : super(key: key);
+  const MyContainer(
+      {Key? key, required this.title, required this.img, required this.id})
+      : super(key: key);
   final String title;
   final img;
+  final String id;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-          return const Details();
-        }));
+        Navigator.of(context).pushNamed(CategoryTravelScreen.routename,arguments: {
+          'id':id,
+          'title':title
+        });
       },
       child: Container(
         height: 200,
@@ -32,41 +37,23 @@ class MyContainer extends StatelessWidget {
                 child: Image.asset(
                   img,
                   width: 200,
-                  height: 140,
+                  height: 180,
                   fit: BoxFit.cover,
                 ),
               ),
               SizedBox(
                 height: 5,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Row(
                 children: [
-                  const Text(
-                    "Fatih Mosque",
+                  Icon(Icons.location_on_outlined),
+                  const SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    title,
                     style: TextStyle(fontSize: 16),
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    children:  [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Icon(Icons.location_on_outlined),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        title,
-                        style: TextStyle(
-                          color: Color(0xff636782),
-                          fontSize: 13,
-                        ),
-                      )
-                    ],
-                  )
                 ],
               ),
             ],

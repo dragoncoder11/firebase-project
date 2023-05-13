@@ -40,12 +40,19 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: Container(
                           decoration: BoxDecoration(
-                              border: Border.all(width: .8, color: Color.fromARGB(255, 51, 113, 163),),
+                              border: Border.all(
+                                width: .8,
+                                color: Color.fromARGB(255, 51, 113, 163),
+                              ),
                               borderRadius: BorderRadius.circular(60)),
                           child: CircleAvatar(
                             radius: 20,
                             backgroundColor: Colors.white,
-                           child: Icon(Icons.person,size: 30,color: Color.fromARGB(255, 134, 190, 236),),
+                            child: Icon(
+                              Icons.person,
+                              size: 30,
+                              color: Color.fromARGB(255, 134, 190, 236),
+                            ),
                           ),
                         ),
                       ),
@@ -65,8 +72,11 @@ class HomeScreen extends StatelessWidget {
                       height: 40,
                       width: 40,
                       decoration: BoxDecoration(
-                          color:  Color.fromARGB(255, 177, 206, 230),
-                          border: Border.all(width: .3, color:  Color.fromARGB(255, 51, 113, 163),),
+                          color: Color.fromARGB(255, 177, 206, 230),
+                          border: Border.all(
+                            width: .3,
+                            color: Color.fromARGB(255, 51, 113, 163),
+                          ),
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                           onPressed: () {},
@@ -148,7 +158,10 @@ class HomeScreen extends StatelessWidget {
                       width: 44,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 128, 178, 219),
-                          border: Border.all(width: .3, color: Color.fromARGB(255, 51, 113, 163),),
+                          border: Border.all(
+                            width: .3,
+                            color: Color.fromARGB(255, 51, 113, 163),
+                          ),
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                           onPressed: () {},
@@ -161,8 +174,23 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 height: 28,
               ),
-            
-        
+              Container(
+                height: 500,
+                child: GridView.builder(itemCount: DUMMY_CATEGORIES.length,
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                      childAspectRatio: 8/11,
+                        maxCrossAxisExtent: 170,
+                        mainAxisSpacing: 10,
+                       
+                        crossAxisSpacing: 10),
+                    itemBuilder: ((context, index) {
+                      return MyContainer(
+                        title: DUMMY_CATEGORIES[index].title,
+                        img: DUMMY_CATEGORIES[index].imageurl,
+                        id: DUMMY_CATEGORIES[index].id,
+                      );
+                    })),
+              )
             ],
           ),
         ),

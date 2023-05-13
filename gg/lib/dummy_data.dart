@@ -6,10 +6,10 @@ import 'package:gg/widgets/plan_shape.dart';
 
 
 const DUMMY_CATEGORIES = const [
- Category1(id: 'c1', title: 'title1', imageurl: 'assets/vvv.png'),
- Category1(id: 'c2', title: 'title2', imageurl: 'assets/vvv.png'),
- Category1(id: 'c3', title: 'title3', imageurl: 'assets/vvv.png'),
- Category1(id: 'c4', title: 'title4', imageurl: 'assets/vvv.png'),
+ Category1(id: 'c1', title: 'Mountains', imageurl: 'assets/x1.jpg'),
+ Category1(id: 'c2', title: 'Oceans', imageurl: 'assets/x2.jpg'),
+ Category1(id: 'c3', title: 'Hotels', imageurl: 'assets/x3.jpg'),
+ Category1(id: 'c4', title: 'Meusieums', imageurl: 'assets/x4.jpg'),
 ];
 
 const DUMMY_MEALS = const [
