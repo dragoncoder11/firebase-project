@@ -12,7 +12,7 @@ const DUMMY_CATEGORIES = const [
  Category1(id: 'c4', title: 'Meusieums', imageurl: 'assets/x4.jpg'),
 ];
 
-const DUMMY_MEALS = const [
+const DUMMY_BOOKING = const [
  ShapePlan(id: 'm1', categories: 'c1', title: 'Spaghetti with Tomato Sauce', imageurl:         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
  ingredients:  [
       '4 Tomatoes',
