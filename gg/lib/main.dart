@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gg/pages/category_travel_screen.dart';
+import 'package:gg/screens/details.dart';
 import 'package:gg/screens/ioginscreen.dart';
 import 'package:gg/screens/signupscreen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:gg/widgets/trip_details.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +36,8 @@ class MyApp extends StatelessWidget {
       ),
      // home: LoginPage(),
      routes:{'/': (context)=> LoginPage(),
-     CategoryTravelScreen.routename:(context) => CategoryTravelScreen()} 
+     CategoryTravelScreen.routename:(context) => CategoryTravelScreen(),
+     TripDetails.routename:(context) => TripDetails(),} 
     );
   }
 }

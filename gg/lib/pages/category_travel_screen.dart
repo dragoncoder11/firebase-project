@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gg/dummy_data.dart';
+import 'package:gg/widgets/card_trip.dart';
 
 
 class CategoryTravelScreen extends StatefulWidget {
@@ -37,7 +38,7 @@ class _CategoryTravelScreenState extends State<CategoryTravelScreen> {
         centerTitle: true,
       ),
       body: ListView.builder(itemBuilder: ((context, index) {
-        return Text(categorybook[index].title);
+        return CardTrip(imageurl: categorybook[index].imageurl, txt: categorybook[index].title, time: categorybook[index].duration,id:  categorybook[index].id,);
         
       }),itemCount:categorybook.length ,),
     );

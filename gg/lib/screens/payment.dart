@@ -22,10 +22,7 @@ class Payment extends StatelessWidget {
           centerTitle: true,
           leading: IconButton(
               onPressed: () {
-                Navigator.of(context)
-                    .pushReplacement(MaterialPageRoute(builder: (_) {
-                  return Details();
-                }));
+                Navigator.of(context).pop();
               },
               icon: Icon(
                 Icons.arrow_back_ios,
@@ -38,8 +35,6 @@ class Payment extends StatelessWidget {
           InkWell(
               onTap: () {
                 showModalBottomSheet(
-                  
-                  
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12)),
                     context: context,
@@ -55,23 +50,28 @@ class Payment extends StatelessWidget {
                               SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                      SizedBox(
-                                      height: 20,
-                                    ),
-                                    TextFField(w: 350,ass: 'assets/b1.png',),
                                     SizedBox(
                                       height: 20,
                                     ),
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    TextFField(
+                                      w: 350,
+                                      ass: 'assets/b1.png',
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                         Text2(w: 160),
+                                        Text2(w: 160),
                                         Text2(w: 160),
                                       ],
                                     ),
-                                        SizedBox(
+                                    SizedBox(
                                       height: 20,
                                     ),
-                                     Text2(w: 350),
+                                    Text2(w: 350),
                                   ],
                                 ),
                               ),
@@ -82,8 +82,8 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                    Color.fromARGB(255, 204, 44, 33)
-                                    )),
+                                                Color.fromARGB(
+                                                    255, 204, 44, 33))),
                                     onPressed: () {},
                                     child: Text('Pay',
                                         style: TextStyle(
@@ -122,26 +122,31 @@ class Payment extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                               SingleChildScrollView(
+                              SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                      SizedBox(
-                                      height: 20,
-                                    ),
-                                    TextFField(w: 350,ass: 'assets/b6.png',),
                                     SizedBox(
                                       height: 20,
                                     ),
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    TextFField(
+                                      w: 350,
+                                      ass: 'assets/b6.png',
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                         Text2(w: 160),
+                                        Text2(w: 160),
                                         Text2(w: 160),
                                       ],
                                     ),
-                                        SizedBox(
+                                    SizedBox(
                                       height: 20,
                                     ),
-                                     Text2(w: 350),
+                                    Text2(w: 350),
                                   ],
                                 ),
                               ),
@@ -152,7 +157,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                    Color.fromARGB(255, 7, 55, 94),
+                                      Color.fromARGB(255, 7, 55, 94),
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',
@@ -184,26 +189,31 @@ class Payment extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                             SingleChildScrollView(
+                              SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                      SizedBox(
-                                      height: 20,
-                                    ),
-                                    TextFField(w: 350,ass: 'assets/b7.png',),
                                     SizedBox(
                                       height: 20,
                                     ),
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    TextFField(
+                                      w: 350,
+                                      ass: 'assets/b7.png',
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                         Text2(w: 160),
+                                        Text2(w: 160),
                                         Text2(w: 160),
                                       ],
                                     ),
-                                        SizedBox(
+                                    SizedBox(
                                       height: 20,
                                     ),
-                                     Text2(w: 350),
+                                    Text2(w: 350),
                                   ],
                                 ),
                               ),
@@ -214,8 +224,8 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                    Color.fromARGB(255, 212, 156, 71)
-                                    )),
+                                                Color.fromARGB(
+                                                    255, 212, 156, 71))),
                                     onPressed: () {},
                                     child: Text('Pay',
                                         style: TextStyle(
@@ -246,26 +256,31 @@ class Payment extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                               SingleChildScrollView(
+                              SingleChildScrollView(
                                 child: Column(
                                   children: [
-                                      SizedBox(
-                                      height: 20,
-                                    ),
-                                    TextFField(w: 350,ass: 'assets/w1.png',),
                                     SizedBox(
                                       height: 20,
                                     ),
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                    TextFField(
+                                      w: 350,
+                                      ass: 'assets/w1.png',
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
-                                         Text2(w: 160),
+                                        Text2(w: 160),
                                         Text2(w: 160),
                                       ],
                                     ),
-                                      SizedBox(
+                                    SizedBox(
                                       height: 20,
                                     ),
-                                     Text2(w: 350),
+                                    Text2(w: 350),
                                   ],
                                 ),
                               ),
@@ -276,7 +291,7 @@ class Payment extends StatelessWidget {
                                     style: ButtonStyle(
                                         backgroundColor:
                                             MaterialStateProperty.all(
-                                    Color.fromARGB(255, 51, 113, 163),
+                                      Color.fromARGB(255, 51, 113, 163),
                                     )),
                                     onPressed: () {},
                                     child: Text('Pay',

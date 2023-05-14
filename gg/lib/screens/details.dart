@@ -2,7 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:gg/screens/payment.dart';
 
 class Details extends StatelessWidget {
-  const Details({Key? key}) : super(key: key);
+  const Details(
+      {Key? key,
+      required this.imageurl,
+      required this.time,
+      required this.id,
+      required this.program,
+      required this.price,
+      required this.ingredients})
+      : super(key: key);
+  final imageurl;
+
+  final time;
+  final id;
+  final program;
+  final price;
+  final ingredients;
 
   @override
   Widget build(BuildContext context) {
@@ -11,36 +26,29 @@ class Details extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, ),
-              child: Row(
-                children: [
-                  IconButton(onPressed: Navigator.of(context).pop, icon: Icon(Icons.arrow_back_ios)),
-                  SizedBox(
-                    width: 115,
-                  ),
-                  Text(
-                    'details',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
             Container(
-                height: 400,
+                height: 300,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(
-                          'assets/x3.jpg',
+                        image: NetworkImage(
+                          imageurl,
                         ),
                         fit: BoxFit.cover)),
                 child: Stack(
                   children: [
                     Positioned(
-                        top: 300,
+                      top: 0,
+                      left: 0,
+                      right: 330,
+                      bottom: 250,
+                      child: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(Icons.arrow_back_ios,color: Colors.white,)),
+                    ),
+                    Positioned(
+                        top: 230,
                         left: 0,
                         right: 0,
                         bottom: 0,
@@ -54,7 +62,7 @@ class Details extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.check_circle,
-                                      color:Color.fromARGB(255, 51, 113, 163),
+                                      color: Color.fromARGB(255, 51, 113, 163),
                                     ),
                                     SizedBox(
                                       width: 14,
@@ -73,7 +81,7 @@ class Details extends StatelessWidget {
                                               fontSize: 12),
                                         ),
                                         Text(
-                                          '5 Days',
+                                          '$time Days',
                                           style: TextStyle(
                                               color: Color.fromARGB(
                                                   255, 231, 221, 221),
@@ -118,33 +126,15 @@ class Details extends StatelessWidget {
                   ],
                 )),
             SizedBox(
-              height: 15,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Details',
-                        style: TextStyle(color:Color.fromARGB(255, 51, 113, 163), fontSize: 16),
-                      ),
-                      SizedBox(
-                        width: 55,
-                      ),
-                      Text(
-                        'Tourlist',
-                        style: TextStyle(color: Colors.grey, fontSize: 16),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
                   Text(
-                    'About',
+                    'details',
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -153,22 +143,52 @@ class Details extends StatelessWidget {
                   SizedBox(
                     height: 8,
                   ),
-                  SingleChildScrollView(
-                    child: Container(
+                 
+                     Container(
                       padding: EdgeInsets.all(10),
-                      height: 170,
+                      height: 160,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           border: Border.all(width: .5, color: Colors.white),
                           borderRadius: BorderRadius.circular(12),
                           color: Colors.white),
-                      child: Text(
-                        'hvshcvlasvfhv hfhegeg gegiehg jhgjehgjegj erkjg h je kger;g jrjg rekjhgkjh kjrk krkrjhk rlkhjrtk jhlkrjtlk hlkjrk gkr lkh',
+                      child: ListView(children: [
+                        Text(
+                        program,
                         style: TextStyle(
                             color: Color.fromARGB(155, 0, 0, 0), fontSize: 14),
                       ),
+                      ],)
                     ),
+                  SizedBox(
+                    height: 8,
                   ),
+                  Text(
+                    'details',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 24),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+              Container(
+                      padding: EdgeInsets.all(10),
+                      height: 160,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: .5, color: Colors.white),
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white),
+                      child: ListView(children: [
+                        Text(
+                        ingredients,
+                        style: TextStyle(
+                            color: Color.fromARGB(155, 0, 0, 0), fontSize: 14),
+                      ),
+                      ],)
+                    ),
                   SizedBox(
                     height: 15,
                   ),
@@ -176,7 +196,7 @@ class Details extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        '\$288',
+                        '\$$time',
                         style: TextStyle(color: Colors.black, fontSize: 24),
                       ),
                       InkWell(
@@ -190,7 +210,7 @@ class Details extends StatelessWidget {
                           height: 70,
                           width: 180,
                           decoration: BoxDecoration(
-                              color:Color.fromARGB(255, 51, 113, 163),
+                              color: Color.fromARGB(255, 51, 113, 163),
                               borderRadius: BorderRadius.circular(12)),
                           child: Center(
                             child: Text(
