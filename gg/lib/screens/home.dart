@@ -49,7 +49,7 @@ HomeScreen(),
             items: [
               BottomNavigationBarItem(icon: Icon(Icons.home,), label: 'Home',),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.currency_bitcoin,), label: 'Services'),
+                  icon: Icon(Icons.favorite_outline,), label: 'Favourites'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.location_city_sharp,), label: 'Activities'),
               BottomNavigationBarItem(

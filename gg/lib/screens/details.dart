@@ -202,7 +202,7 @@ class Details extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           Navigator.of(context)
-                              .pushReplacement(MaterialPageRoute(builder: (_) {
+                              .push(MaterialPageRoute(builder: (_) {
                             return Payment();
                           }));
                         },
