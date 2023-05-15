@@ -30,7 +30,7 @@ const DUMMY_BOOKING = const [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
-   duration: 20),
+   duration: 30),
   ShapePlan(id: 'm2', categories: 'c1', title: 'Spaghetti with Tomato Sauce', imageurl:  'https://images.unsplash.com/photo-1575728252059-db43d03fc2de?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTh8fG1vdW5hdGluc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=',
  ingredients:  [
       '4 Tomatoes',
@@ -50,7 +50,7 @@ const DUMMY_BOOKING = const [
       
       
     ],
-   duration: 20),
+   duration: 4),
  ShapePlan(id: 'm3', categories: 'c2', title: 'Spaghetti with Tomato Sauce', imageurl:          'https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8bGFrZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
  ingredients:  [
       '4 Tomatoes',
@@ -68,7 +68,7 @@ const DUMMY_BOOKING = const [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
-   duration: 20),
+   duration: 7),
  ShapePlan(id: 'm4', categories: 'c2', title: 'Spaghetti with Tomato Sauce', imageurl:           'https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiZWFjaHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
  ingredients:  [
       '4 Tomatoes',
@@ -86,7 +86,7 @@ const DUMMY_BOOKING = const [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
-   duration: 20),
+   duration: 12),
    ShapePlan(id: 'm5', categories: 'c2', title: 'Spaghetti with Tomato Sauce', imageurl:    'https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiZWFjaHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
 ingredients:  [
       '4 Tomatoes',
@@ -104,7 +104,7 @@ ingredients:  [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
-   duration: 20),
+   duration: 19),
    ShapePlan(id: 'm6', categories: 'c2', title: 'Spaghetti with Tomato Sauce', imageurl:          'https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiZWFjaHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
  ingredients:  [
       '4 Tomatoes',
@@ -122,7 +122,7 @@ ingredients:  [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
-   duration: 20),
+   duration: 1),
    ShapePlan(id: 'm7', categories: 'c2', title: 'Spaghetti with Tomato Sauce', imageurl:         'https://images.unsplash.com/photo-1493558103817-58b2924bce98?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAxfHxiZWFjaHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60',
  ingredients:  [
       '4 Tomatoes',

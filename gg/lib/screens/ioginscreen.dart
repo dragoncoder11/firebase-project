@@ -50,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    var obscure=true;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
@@ -95,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 40,
                     ),
-                    TextFieldShape(
+                    TextFieldShape(istrue: false,
                       htext: 'enter your email',
                       ltext: 'Email',
                       c: _emailcontroller,
@@ -103,10 +104,17 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 20,
                     ),
-                    TextFieldShape(
+                    TextFieldShape(istrue: obscure,
                       htext: 'enter your password',
                       ltext: 'Password',
                       c: _passwordcontroller,
+                        
+                      kicon: (obscure ==true? Icons.visibility : Icons.visibility_off),
+                      ontap: () {
+                        setState(() {
+                          obscure = !obscure;
+                        });
+                      },
                     ),
                     SizedBox(
                       height: 20,
@@ -130,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                             'SIGN UP',
                             style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.blueAccent,
+                                color: Color.fromARGB(255, 51, 113, 163),
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

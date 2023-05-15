@@ -51,7 +51,7 @@ HomeScreen(),
               BottomNavigationBarItem(
                   icon: Icon(Icons.favorite_outline,), label: 'Favourites'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.location_history,), label: 'Activities'),
+                  icon: Icon(Icons.location_disabled_sharp), label: 'Activities'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person,), label: 'Profile'),
             ]),

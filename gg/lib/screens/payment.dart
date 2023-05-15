@@ -7,7 +7,11 @@ import 'package:gg/widgets/textfield.dart';
 import 'package:gg/widgets/textfield_shape.dart';
 
 class Payment extends StatelessWidget {
-  const Payment({super.key});
+  const Payment({
+    super.key,
+    required this.txt,
+  });
+  final txt;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +36,7 @@ class Payment extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Text('${txt} \$',style: TextStyle(color: Colors.black, fontSize: 24),),
           InkWell(
               onTap: () {
                 showModalBottomSheet(

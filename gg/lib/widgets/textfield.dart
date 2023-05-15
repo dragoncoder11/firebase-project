@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 
 class TextFieldShape extends StatelessWidget {
-  const TextFieldShape({Key? key, required this.htext, required this.ltext, required this.c})
+   TextFieldShape(
+      {Key? key,
+      required this.htext,
+      required this.ltext,
+      required this.c,
+     required this.istrue, this.kicon, this.ontap,})
       : super(key: key);
   final htext;
   final ltext;
+   bool istrue;
+  final IconData? kicon;
+
+    final ontap;
   final TextEditingController c;
 
   @override
@@ -26,8 +35,13 @@ class TextFieldShape extends StatelessWidget {
             border: InputBorder.none,
             hintText: htext,
             labelText: ltext,
+            suffixIcon:GestureDetector(
+              onTap: ontap,
+              child: Icon(kicon),
+            )
           ),
           controller: c,
+          obscureText: istrue,
         ),
       ),
     );

@@ -18,12 +18,13 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   final _emailcontroller = TextEditingController();
   final _passwordcontroller = TextEditingController();
-   final _namecontroller = TextEditingController();
- final _confirmpasswordcontroller = TextEditingController(); 
+  final _namecontroller = TextEditingController();
+  final _confirmpasswordcontroller = TextEditingController();
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
+    bool obscure = true;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
@@ -73,17 +74,18 @@ class _SignUpPageState extends State<SignUpPage> {
                         fontSize: 18,
                       ),
                     ),
-                      SizedBox(
+                    SizedBox(
                       height: 30,
-                    ),     TextFieldShape(
-                        htext: 'enter your full name',
-                        ltext: 'Name',
-                        c: _namecontroller,
-                        ),
+                    ),
+                    TextFieldShape(istrue: false,
+                      htext: 'enter your full name',
+                      ltext: 'Name',
+                      c: _namecontroller,
+                    ),
                     SizedBox(
                       height: 15,
                     ),
-                    TextFieldShape(
+                    TextFieldShape(istrue: false,
                       htext: 'enter your email',
                       ltext: 'Email',
                       c: _emailcontroller,
@@ -95,23 +97,22 @@ class _SignUpPageState extends State<SignUpPage> {
                       htext: 'enter your password',
                       ltext: 'Password',
                       c: _passwordcontroller,
+                      istrue: obscure,
+                      kicon: obscure ==true? Icons.visibility : Icons.visibility_off,
+                      ontap:  () {
+                        setState(() {
+                          obscure = !obscure;
+                        });
+                      },
                     ),
-                            SizedBox(
-                      height: 15,
-                    ),
-                 
-                      TextFieldShape(
-                        htext: 'confirm your password',
-                        ltext: 'Confirm password',
-                        c: _confirmpasswordcontroller,
-                        ), 
                     SizedBox(
                       height: 15,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Already have an account?',
+                        Text(
+                          'Already have an account?',
                           style: TextStyle(
                             fontSize: 15,
                           ),
@@ -127,7 +128,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             'LOG IN',
                             style: TextStyle(
                                 fontSize: 18,
-                                color: Colors.blueAccent,
+                                color: Color.fromARGB(255, 51, 113, 163),
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -144,13 +145,12 @@ class _SignUpPageState extends State<SignUpPage> {
                                 email: _emailcontroller.text.toString(),
                                 password: _passwordcontroller.text.toString())
                             .then((value) {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) {
-        return Home();
-      }));
-                        
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return Home();
+                          }));
                         }).onError((error, stackTrace) {
                           utility().toastmessage(error.toString());
-                        
                         });
                       },
                       child: Container(

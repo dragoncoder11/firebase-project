@@ -164,7 +164,7 @@ class Details extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    'details',
+                    'program',
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w500,
@@ -203,7 +203,7 @@ class Details extends StatelessWidget {
                         onTap: () {
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (_) {
-                            return Payment();
+                            return Payment(txt: time.toString(),);
                           }));
                         },
                         child: Container(
